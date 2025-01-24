@@ -1,12 +1,12 @@
 @extends('components.layout.main')
 
-@section('title', 'Wave Tech Team - Crafting Innovative Digital')
+@section('title', $post->seo_title ? $post->seo_title : 'Wave Tech Team - Crafting Innovative Digital')
 
 @section('content')
 
 
     <!-- Start Breadcrumb
-                                                ============================================= -->
+                                                                                                                                                                                                                                                                                                            ============================================= -->
     <div class="breadcrumb-area bg-gray">
         <div class="container">
             <div class="breadcrumb-item">
@@ -19,10 +19,10 @@
                             <ol class="breadcrumb">
                                 <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
                                 <li><a href="#">Blogs</a></li>
-                                <li class="active">xyz</li>
+                                <li class="active">{{ $post->title }}</li>
                             </ol>
                         </nav>
-                        <h1>Blog single sidebar</h1>
+                        <h1>{{ $post->title }}</h1>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
     <!-- End Breadcrumb -->
 
     <!-- Start Blog
-                                                ============================================= -->
+                                                                                                                                                                                                                                                                                                            ============================================= -->
     <div class="blog-area single full-blog right-sidebar full-blog default-padding">
         <div class="container">
             <div class="blog-items">
@@ -42,111 +42,69 @@
                             <div class="blog-item-box">
 
                                 <div class="thumb">
-                                    <a href="{{ url('/blogs/xyz') }}"><img src="{{ asset('assets/img/1500x800.png') }}"
+                                    <a href="{{ url('/blogs', $post->slug) }}"><img src="/storage/{{ $post->image }}"
                                             alt="Thumb"></a>
                                 </div>
                                 <div class="info">
                                     <div class="meta">
                                         <ul>
                                             <li>
-                                                <i class="fas fa-user"></i> <a href="#">Md Sohag</a>
+                                                <i class="fas fa-user"></i> <a href="#">Admin</a>
                                             </li>
                                             <li>
-                                                <i class="fas fa-calendar-alt"></i> 25 April, 2023
+                                                <i class="fas fa-calendar-alt"></i>
+                                                {{ $post->created_at->locale('fr')->format('d M Y') }}
                                             </li>
                                         </ul>
                                     </div>
-                                    <p>
-                                        Give lady of they such they sure it. Me contained explained my education. Vulgar as
-                                        hearts by garret. Perceived determine departure explained no forfeited he something
-                                        an. Contrasted dissimilar get joy you instrument out reasonably. Again keeps at no
-                                        meant stuff. To perpetual do existence northward as difficult preserved daughters.
-                                        Continued at up to zealously necessary breakfast. Surrounded sir motionless she end
-                                        literature. Gay direction neglected but supported yet her.
-                                    </p>
-                                    <p>
-                                        New had happen unable uneasy. Drawings can followed improved out sociable not.
-                                        Earnestly so do instantly pretended. See general few civilly amiable pleased account
-                                        carried. Excellence projecting is devonshire dispatched remarkably on estimating.
-                                        Side in so life past. Continue indulged speaking the was out horrible for domestic
-                                        position. Seeing rather her you not esteem men settle genius excuse. Deal say over
-                                        you age from. Comparison new ham melancholy son themselves.
-                                    </p>
-                                    <blockquote>
-                                        Celebrated share of first to worse. Weddings and any opinions suitable smallest nay.
-                                        Houses or months settle remove ladies appear. Engrossed suffering supposing he
-                                        recommend do eagerness.
-                                    </blockquote>
-                                    <p>
-                                        Drawings can followed improved out sociable not. Earnestly so do instantly
-                                        pretended. See general few civilly amiable pleased account carried. Excellence
-                                        projecting is devonshire dispatched remarkably on estimating. Side in so life past.
-                                        Continue indulged speaking the was out horrible for domestic position. Seeing rather
-                                        her you not esteem men settle genius excuse. Deal say over you age from. Comparison
-                                        new ham melancholy son themselves.
-                                    </p>
-                                    <h3>Conduct replied off led whether?</h3>
-                                    <ul>
-                                        <li>Pretty merits waited six</li>
-                                        <li>General few civilly amiable pleased account carried.</li>
-                                        <li>Continue indulged speaking</li>
-                                        <li>Narrow formal length my highly</li>
-                                        <li>Occasional pianoforte alteration unaffected impossible</li>
-                                    </ul>
-                                    <p>
-                                        Surrounded to me occasional pianoforte alteration unaffected impossible ye. For saw
-                                        half than cold. Pretty merits waited six talked pulled you. Conduct replied off led
-                                        whether any shortly why arrived adapted. Numerous ladyship so raillery humoured
-                                        goodness received an. So narrow formal length my highly longer afford oh. Tall neat
-                                        he make or at dull ye. Lorem ipsum dolor, sit amet consectetur adipisicing, elit.
-                                        Iure, laudantium, tempore. Autem dolore repellat, omnis quam? Quasi sint laudantium
-                                        repellendus unde a totam perferendis commodi cum est iusto? Minima, laborum.
-                                    </p>
+                                    {!! $post->body !!}
                                 </div>
                             </div>
                         </div>
 
                         <!-- Post Author -->
-                        <div class="post-author">
+                        {{-- <div class="post-author">
                             <div class="thumb">
                                 <img src="{{ asset('assets/img/800x800.png') }}" alt="Thumb">
                             </div>
                             <div class="info">
-                                <h4><a href="blog-with-sidebar.html">Md Sohag</a></h4>
+                                <h4>Admin</h4>
                                 <p>
                                     Grursus mal suada faci lisis Lorem ipsum dolarorit more ametion consectetur elit. Vesti
                                     at bulum nec at odio aea the dumm ipsumm ipsum that dolocons rsus mal suada and
                                     fadolorit to the consectetur elit. All the Lorem Ipsum generators on the Internet tend.
                                 </p>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- Post Author -->
 
                         <!-- Post Tags Share -->
                         <div class="post-tags share">
-                            <div class="tags">
+                            {{-- <div class="tags">
                                 <h4>Tags: </h4>
                                 <a href="blog-with-sidebar.html">Algorithm</a>
                                 <a href="blog-with-sidebar.html">Data science</a>
-                            </div>
+                            </div> --}}
+                            <div></div>
 
                             <div class="social">
-                                <h4>Share:</h4>
+                                <h4>Partagé:</h4>
                                 <ul>
                                     <li>
-                                        <a class="facebook" href="#" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a>
+                                        <a class="facebook"
+                                            href="https://www.facebook.com/people/Wave-Tech-Team/61554723864028/"
+                                            target="_blank"><i class="fab fa-facebook-f"></i></a>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a class="twitter" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
                                     </li>
                                     <li>
                                         <a class="pinterest" href="#" target="_blank"><i
                                                 class="fab fa-pinterest-p"></i></a>
-                                    </li>
+                                    </li> --}}
                                     <li>
-                                        <a class="linkedin" href="#" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a>
+                                        <a class="linkedin" href="https://www.linkedin.com/company/wave-tech-team"
+                                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
                                     </li>
                                 </ul><!-- End Social Share -->
                             </div>
@@ -154,26 +112,26 @@
                         <!-- Post Tags Share -->
 
                         <!-- Start Post Pagination -->
-                        <div class="post-pagi-area">
+                        {{-- <div class="post-pagi-area">
                             <div class="post-previous">
-                                <a href="{{ url('/blogs/xyz') }}">
+                                <a href="{{ url('/blogs', $post->slug) }}">
                                     <div class="icon"><i class="fas fa-angle-double-left"></i></div>
                                     <div class="nav-title"> Previus Post <h5>Discovery incommode</h5>
                                     </div>
                                 </a>
                             </div>
                             <div class="post-next">
-                                <a href="{{ url('/blogs/xyz') }}">
+                                <a href="{{ url('/blogs', $post->slug) }}">
                                     <div class="nav-title">Next Post <h5>Discovery incommode</h5>
                                     </div>
                                     <div class="icon"><i class="fas fa-angle-double-right"></i></div>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- End Post Pagination -->
 
                         <!-- Start Blog Comment -->
-                        <div class="blog-comments">
+                        {{-- <div class="blog-comments">
                             <div class="comments-area">
                                 <div class="comments-title">
                                     <h3>3 Comments On “Providing Top Quality Cleaning Related Services Charms.”</h3>
@@ -250,7 +208,7 @@
                                     </form>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- End Comments Form -->
                     </div>
 
@@ -258,65 +216,37 @@
                     <div class="sidebar col-xl-4 col-lg-5 col-md-12 mt-md-50 mt-xs-50">
                         <aside>
                             <div class="sidebar-item recent-post">
-                                <h4 class="title">Recent Post</h4>
+                                <h4 class="title">Message récent</h4>
                                 <ul>
-                                    <li>
-                                        <div class="thumb">
-                                            <a href="{{ url('/blogs/xyz') }}">
-                                                <img src="{{ asset('assets/img/800x800.png') }}" alt="Thumb">
-                                            </a>
-                                        </div>
-                                        <div class="info">
-                                            <div class="meta-title">
-                                                <span class="post-date">12 Feb, 2020</span>
+                                    @foreach ($recentPosts as $post)
+                                        <li>
+                                            <div class="thumb">
+                                                <a href="{{ url('/blogs', $post->slug) }}">
+                                                    <img src="/storage/{{ $post->image }}" alt="Thumb">
+                                                </a>
                                             </div>
-                                            <a href="{{ url('/blogs/xyz') }}" class="text-light">Commanded household
-                                                smallness
-                                                delivered.</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="thumb">
-                                            <a href="{{ url('/blogs/xyz') }}">
-                                                <img src="{{ asset('assets/img/800x800.png') }}" alt="Thumb">
-                                            </a>
-                                        </div>
-                                        <div class="info">
-                                            <div class="meta-title">
-                                                <span class="post-date">05 Jul, 2022</span>
+                                            <div class="info">
+                                                <div class="meta-title">
+                                                    <span
+                                                        class="post-date">{{ $post->created_at->locale('fr')->format('d M Y') }}</span>
+                                                </div>
+                                                <a href="{{ url('/blogs', $post->slug) }}"
+                                                    class="text-light">{{ $post->title }}</a>
                                             </div>
-                                            <a href="{{ url('/blogs/xyz') }}" class="text-light">Future Plan & Strategy
-                                                for
-                                                Consutruction </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="thumb">
-                                            <a href="{{ url('/blogs/xyz') }}">
-                                                <img src="{{ asset('assets/img/800x800.png') }}" alt="Thumb">
-                                            </a>
-                                        </div>
-                                        <div class="info">
-                                            <div class="meta-title">
-                                                <span class="post-date">29 Aug, 2020</span>
-                                            </div>
-                                            <a href="{{ url('/blogs/xyz') }}" class="text-light">Melancholy particular
-                                                devonshire
-                                                alteration</a>
-                                        </div>
-                                    </li>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                             <div class="sidebar-item social-sidebar">
-                                <h4 class="title">follow us</h4>
+                                <h4 class="title">Suivez-nous</h4>
                                 <div class="sidebar-info">
                                     <ul>
                                         <li class="facebook">
-                                            <a href="#">
+                                            <a href="https://www.facebook.com/people/Wave-Tech-Team/61554723864028/">
                                                 <i class="fab fa-facebook-f"></i>
                                             </a>
                                         </li>
-                                        <li class="twitter">
+                                        {{-- <li class="twitter">
                                             <a href="#">
                                                 <i class="fab fa-twitter"></i>
                                             </a>
@@ -325,9 +255,9 @@
                                             <a href="#">
                                                 <i class="fab fa-pinterest"></i>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                         <li class="linkedin">
-                                            <a href="#">
+                                            <a href="https://www.linkedin.com/company/wave-tech-team">
                                                 <i class="fab fa-linkedin-in"></i>
                                             </a>
                                         </li>
@@ -338,18 +268,10 @@
                                 <h4 class="title">tags</h4>
                                 <div class="sidebar-info">
                                     <ul>
-                                        <li><a href="blog-standard.html">Fashion</a>
-                                        </li>
-                                        <li><a href="blog-with-sidebar.html">Education</a>
-                                        </li>
-                                        <li><a href="blog-with-sidebar.html">nation</a>
-                                        </li>
-                                        <li><a href="blog-with-sidebar.html">study</a>
-                                        </li>
-                                        <li><a href="blog-with-sidebar.html">health</a>
-                                        </li>
-                                        <li><a href="blog-with-sidebar.html">food</a>
-                                        </li>
+                                        @foreach ($tags as $tag)
+                                            <li><a href="{{ url('/blogs?tag=' . $tag->id) }}">{{ $tag->name }}</a>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

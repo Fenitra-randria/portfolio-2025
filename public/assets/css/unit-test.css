@@ -112,6 +112,9 @@ button.btn:hover::after {
 .blog-area.blog-grid-colum .thumb img {
 	border-radius: inherit;
 	margin-bottom: 30px;
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .blog-area .item {
@@ -1161,6 +1164,7 @@ nav.woocommerce-breadcrumb a {
 	margin-top: 50px;
 	float: left;
 	width: 100%;
+    justify-content: space-between;
 }
 
 .post-tags.share .tags {

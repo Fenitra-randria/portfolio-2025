@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/contact', function () {
     return view("front.contact");
@@ -25,21 +26,13 @@ Route::get('/about-us', function () {
     return view("front.about-us");
 });
 
-Route::get('/services', function () {
-    return view("front.services.index");
-});
+Route::get('/services', [ServiceController::class, 'index']);
 
-Route::get('/services/{slug}', function () {
-    return view("front.services.details");
-});
+Route::get('/services/{slug}', [ServiceController::class, 'show']);
 
-Route::get('/blogs', function () {
-    return view("front.blogs.index");
-});
+Route::get('/blogs', [PostController::class, 'index']);
 
-Route::get('/blogs/{slug}', function () {
-    return view("front.blogs.details");
-});
+Route::get('/blogs/{slug}', [PostController::class, 'show']);
 
 
 Route::group(['prefix' => 'admin'], function () {

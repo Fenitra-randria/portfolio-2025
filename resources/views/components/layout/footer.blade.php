@@ -14,9 +14,11 @@
                             </p>
                             <div class="footer-social mt-30">
                                 <ul>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://www.facebook.com/people/Wave-Tech-Team/61554723864028/"><i
+                                                class="fab fa-facebook-f"></i></a></li>
+                                    {{-- <li><a href="#"><i class="fab fa-twitter"></i></a></li> --}}
+                                    <li><a href="https://www.linkedin.com/company/wave-tech-team"><i
+                                                class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
                         </div>

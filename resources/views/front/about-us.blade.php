@@ -6,7 +6,7 @@
 
 
     <!-- Start Breadcrumb
-                                                                            ============================================= -->
+                                                                                                                                                                                        ============================================= -->
     <div class="breadcrumb-area bg-gray bg-cover">
         <div class="container">
             <div class="breadcrumb-item">
@@ -30,7 +30,7 @@
     <!-- End Breadcrumb -->
 
     <!-- Start About
-                                                                            ============================================= -->
+                                                                                                                                                                                        ============================================= -->
     <div class="about-area default-padding relative">
         <div class="blur-bg-theme"></div>
         <div class="container">
@@ -72,7 +72,7 @@
     <!-- End About -->
 
     <!-- Start Fun Factor
-                                                                            ============================================= -->
+                                                                                                                                                                                        ============================================= -->
     <div class="fun-factor-circle-area default-padding bg-gray">
         <div class="container">
             <div class="row">
@@ -121,7 +121,7 @@
     <!-- End Fun Factor -->
 
     <!-- Start Why Choose Us
-                                                                            ============================================= -->
+                                                                                                                                                                                        ============================================= -->
     <div class="choose-us-style-one-area default-padding bg-gray">
         <div class="container">
             <div class="row align-center">
@@ -158,7 +158,7 @@
     <!-- End Why Choose Us -->
 
     <!-- Start Testimonial Area
-                                                                            ============================================= -->
+                                                                                                                                                                                        ============================================= -->
     {{-- <div class="testimonial-style-one-area default-padding-top">
 
         <div class="container">
@@ -303,7 +303,7 @@
     <!-- End Testimonial Area -->
 
     <!-- Start Clients Area
-                                                                            ============================================= -->
+                                                                                                                                                                                        ============================================= -->
     {{-- <div class="clietns-area default-padding-bottom bg-dark-secondary text-light">
         <div class="container">
             <div class="client-items">
@@ -349,7 +349,7 @@
     <!-- End Clients Area -->
 
     <!-- Start Team Members
-                                                                            ============================================= -->
+                                                                                                                                                                                        ============================================= -->
     <div class="team-style-one-area bg-cover default-padding bottom-less"
         style="background-image: url(assets/img/shape/10.png);">
 
@@ -371,16 +371,17 @@
                 <div class="col-xl-3 col-md-6 mb-30 wow fadeInUp">
                     <div class="team-style-one">
                         <div class="thumb">
-                            <img src="assets/img/800x800.png" alt="Image Not Found">
+                            <img src="assets/img/teams/fenitra.png" alt="Image Not Found">
                             <ul class="social">
-                                <li class="facebook">
-                                    <a href="#">
+                                {{-- <li class="facebook">
+                                    <a href="https://www.facebook.com/people/Wave-Tech-Team/61554723864028/">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
-                                </li>
-                                <li class="twitter">
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
+                                </li> --}}
+                                <li class="linkedin">
+                                    <a
+                                        href="https://www.linkedin.com/in/aro-fenitra-randriamihajanirina-developpeur-angular-reactjs-vuejs/">
+                                        <i class="fab fa-linkedin-in"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -388,8 +389,8 @@
                         <div class="content">
                             <a href="#"><i class="fas fa-comment-alt-lines"></i></a>
                             <div class="info">
-                                <h4><a href="team-details.html">James Baker</a></h4>
-                                <span>Marketing Expert</span>
+                                <h4><a href="#">Aro Fenitra</a></h4>
+                                <span>Développeur Fullstack Senior</span>
                             </div>
                         </div>
                     </div>
@@ -399,16 +400,16 @@
                 <div class="col-xl-3 col-md-6 mb-30 wow fadeInUp" data-wow-delay="300ms">
                     <div class="team-style-one">
                         <div class="thumb">
-                            <img src="assets/img/800x800.png" alt="Image Not Found">
+                            <img src="assets/img/teams/mahefa.jpeg" alt="Image Not Found">
                             <ul class="social">
-                                <li class="facebook">
-                                    <a href="#">
+                                {{-- <li class="facebook">
+                                    <a href="https://www.facebook.com/people/Wave-Tech-Team/61554723864028/">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
-                                </li>
-                                <li class="twitter">
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
+                                </li> --}}
+                                <li class="linkedin">
+                                    <a href="https://www.linkedin.com/in/mahefa-andriamihaja-b19319211/">
+                                        <i class="fab fa-linkedin-in"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -416,8 +417,8 @@
                         <div class="content">
                             <a href="#"><i class="fas fa-comment-alt-lines"></i></a>
                             <div class="info">
-                                <h4><a href="team-details.html">Dalton Grant</a></h4>
-                                <span>Project Manager</span>
+                                <h4><a href="#">Mahefa Martinot</a></h4>
+                                <span>Designer UI/UX & Développeur Front-end</span>
                             </div>
                         </div>
                     </div>
@@ -427,16 +428,16 @@
                 <div class="col-xl-3 col-md-6 mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="team-style-one">
                         <div class="thumb">
-                            <img src="assets/img/800x800.png" alt="Image Not Found">
+                            <img src="assets/img/teams/nirilanto.jpeg" alt="Image Not Found">
                             <ul class="social">
-                                <li class="facebook">
-                                    <a href="#">
+                                {{-- <li class="facebook">
+                                    <a href="https://www.facebook.com/people/Wave-Tech-Team/61554723864028/">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
-                                </li>
-                                <li class="twitter">
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
+                                </li> --}}
+                                <li class="linkedin">
+                                    <a href="https://www.linkedin.com/in/venerand-nirilanto-36294a15b">
+                                        <i class="fab fa-linkedin-in"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -444,8 +445,8 @@
                         <div class="content">
                             <a href="#"><i class="fas fa-comment-alt-lines"></i></a>
                             <div class="info">
-                                <h4><a href="team-details.html">Ryan Ricketts</a></h4>
-                                <span>Consulting Officer</span>
+                                <h4><a href="#">Nirilanto Venerand</a></h4>
+                                <span>Développeur Fullstack Senior</span>
                             </div>
                         </div>
                     </div>
@@ -455,16 +456,16 @@
                 <div class="col-xl-3 col-md-6 mb-30 wow fadeInLeft" data-wow-delay="700ms">
                     <div class="team-style-one">
                         <div class="thumb">
-                            <img src="assets/img/800x800.png" alt="Image Not Found">
+                            <img src="assets/img/teams/sanda.jpeg" alt="Image Not Found">
                             <ul class="social">
-                                <li class="facebook">
-                                    <a href="#">
+                                {{-- <li class="facebook">
+                                    <a href="https://www.facebook.com/people/Wave-Tech-Team/61554723864028/">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
-                                </li>
-                                <li class="twitter">
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
+                                </li> --}}
+                                <li class="linkedin">
+                                    <a href="https://mg.linkedin.com/in/sanda-lalaina-antsanombana-a1aa25299">
+                                        <i class="fab fa-linkedin-in"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -472,8 +473,8 @@
                         <div class="content">
                             <a href="#"><i class="fas fa-comment-alt-lines"></i></a>
                             <div class="info">
-                                <h4><a href="team-details.html">Danny Russell</a></h4>
-                                <span>Creative Director</span>
+                                <h4><a href="#">Sanda Lalaina</a></h4>
+                                <span>Marketing Digital</span>
                             </div>
                         </div>
                     </div>

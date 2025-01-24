@@ -1,12 +1,12 @@
 @extends('components.layout.main')
 
-@section('title', 'Wave Tech Team - Crafting Innovative Digital')
+@section('title', $service->seo_title ? $service->seo_title : 'Wave Tech Team - Crafting Innovative Digital')
 
 @section('content')
 
 
     <!-- Start Breadcrumb
-                                            ============================================= -->
+                                                                                                                                ============================================= -->
     <div class="breadcrumb-area bg-gray">
         <div class="container">
             <div class="breadcrumb-item">
@@ -21,7 +21,7 @@
                                 <li class="active">Service</li>
                             </ol>
                         </nav>
-                        <h1>Turn Information <br> Into Actionable Insights</h1>
+                        <h1>{{ $service->title }}</h1>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
     <!-- End Breadcrumb -->
 
     <!-- Star Services Details Area
-                                            ============================================= -->
+                                                                                                                                ============================================= -->
     <div class="services-details-area default-padding">
         <div class="container">
             <div class="services-details-items">
@@ -38,56 +38,12 @@
 
                     <div class="col-xl-8 col-lg-7 pr-45 pr-md-15 pr-xs-15 services-single-content">
                         <div class="service-single-thumb">
-                            <img src="{{ asset('assets/img/1500x800.png') }}" alt="Thumb">
+                            <img src="/storage/{{ $service->image }}" alt="Thumb">
                         </div>
-                        <h2>Best influencer marketing services</h2>
-                        <p>
-                            We denounce with righteous indige nation and dislike men who are so beguiled and demo realized
-                            by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain
-                            and trouble that are bound to ensue cannot foresee. These cases are perfectly simple and easy to
-                            distinguish. In a free hour, when our power of choice is untrammelled data structures manages
-                            data in technology.
-                        </p>
-                        <div class="features mt-40 mt-xs-30 mb-30 mb-xs-20">
-                            <div class="row">
-                                <div class="col-lg-5 col-md-6">
-                                    <div class="content">
-                                        <h3>Included Services</h3>
-                                        <ul class="feature-list-item">
-                                            <li>Monthly SEO Task</li>
-                                            <li>24/7 Alltime Supporting</li>
-                                            <li>Turbo Boosting</li>
-                                            <li>Expert Team Members</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-6 mt-xs-30">
-                                    <div class="content">
-                                        <h3>The Challange</h3>
-                                        <p>
-                                            Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus
-                                            saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-                                            Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-                                            voluptatibus maiores alias. consequatur aut perferendis doloribus.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h3>What we do?</h3>
-                        <p>
-                            Nam libero tempore, cum soluta nobis est elig endi optio cumque nihil impedit quo minus id quod
-                            maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repelle ndus.
-                            Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et
-                            voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a
-                            sapiente delectus, ut aut reiciendis voluptatibus maiores alias. consequatur aut perferendis
-                            doloribus asperiores repellat. The wise man therefore always holds in these matters to this
-                            principle of selection: he rejects pleasures to secure other greater pleasures, or else he
-                            endures pains to avoid worse pains. pleasures have to be repudiated and annoyances accepted.
-                        </p>
+                        {!! $service->body !!}
 
 
-                        <div class="faq-style-one faq-style-two mt-40">
+                        {{-- <div class="faq-style-one faq-style-two mt-40">
                             <h2 class="mb-30">Any Questions find here.</h2>
                             <div class="accordion" id="faqAccordion">
                                 <div class="accordion-item">
@@ -146,40 +102,48 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <div class="col-xl-4 col-lg-5 mt-md-50 mt-xs-50 pl-30 pl-md-15 pl-xs-15 services-sidebar">
                         <!-- Single Widget -->
-                        <div class="single-widget services-list-widget">
-                            <h4 class="widget-title">Services</h4>
-                            <ul class="text-light">
-                                <li><a href="{{ url('services/xyz') }}"> Brand Creation <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </li>
-                                <li class="current-item"><a href="{{ url('services/xyz') }}"> Web Campaigns <i
-                                            class="fas fa-arrow-right"></i></a></li>
-                                <li><a href="{{ url('services/xyz') }}">Creative Strategy <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </li>
-                                <li><a href="{{ url('services/xyz') }}">Brand strategy <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </li>
-                                <li><a href="{{ url('services/xyz') }}">Components developing <i
-                                            class="fas fa-arrow-right"></i></a></li>
-                            </ul>
-                        </div>
+                        @if (!$recentServices->isEmpty())
+                            <div class="single-widget services-list-widget">
+                                <h4 class="widget-title">Services</h4>
+                                <ul class="text-light">
+                                    @foreach ($recentServices as $service)
+                                        <li>
+                                            <div class="thumb">
+                                                <a href="{{ url('/services', $service->slug) }}">
+                                                    <img src="/storage/{{ $service->image }}" alt="Thumb">
+                                                </a>
+                                            </div>
+                                            <div class="info">
+                                                <div class="meta-title">
+                                                    <span
+                                                        class="service-date">{{ $service->created_at->locale('fr')->format('d M Y') }}</span>
+                                                </div>
+                                                <a href="{{ url('/services', $service->slug) }}"
+                                                    class="text-light">{{ $service->title }}</a>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <!-- End Single Widget -->
                         <div class="single-widget quick-contact-widget bg-gradient text-light">
                             <div class="content">
-                                <h3>Need Help?</h3>
+                                <h3>Besoin d'aide ?
+                                </h3>
                                 <p>
-                                    Speak with a human to filling out a form? call corporate office and we will connect.
+                                    Parler à un humain pour remplir un formulaire ? appelez le siège social et nous nous
+                                    connecterons.
                                 </p>
-                                <h2>+(012) 6679545</h2>
-                                <h4><a href="mailto:info@digital.com">info@digital.com</a></h4>
-                                <a class="btn mt-30 btn-sm circle btn-light effect" href="{{ url('/contact') }}">Contact
-                                    Now</a>
+                                <h2>+261 34 00 000 00</h2>
+                                <h4><a href="mailto:info@wavetechteam.com">info@wavetechteam.com</a></h4>
+                                <a class="btn mt-30 btn-sm circle btn-light effect" href="{{ url('/contact') }}">Contacter
+                                    maintenant</a>
                             </div>
                         </div>
                         <!-- Single Widget -->
@@ -200,8 +164,8 @@
     <!-- End Services Details Area -->
 
     <!-- Start Pricing
-                                                                                                                                                    ============================================= -->
-    <div class="pricing-style-one-area default-padding">
+                                                                                                                                                                                                                                        ============================================= -->
+    <div class="pricing-style-one-area default-padding-bottom">
         <div class="shape-left-top">
             <img src="{{ asset('assets/img/shape/11.png') }}" alt="Image Not Found">
         </div>
@@ -245,8 +209,7 @@
                                 <span>Une boutique en ligne avec plus de 6 pages, seulement à partie de
 
                                 </span>
-                                <a class="btn mt-25 btn-sm circle btn-border light"
-                                    href="{{ url('/contact') }}">Commander
+                                <a class="btn mt-25 btn-sm circle btn-border light" href="{{ url('/contact') }}">Commander
                                 </a>
                             </div>
                             <div class="right">
@@ -264,8 +227,7 @@
                             <div class="left">
                                 <h4>Sur mesure</h4>
                                 <span>Un site sur mesure seulement à partie de</span>
-                                <a class="btn mt-25 btn-sm circle btn-border light"
-                                    href="{{ url('/contact') }}">Commander
+                                <a class="btn mt-25 btn-sm circle btn-border light" href="{{ url('/contact') }}">Commander
                                 </a>
                             </div>
                             <div class="right">

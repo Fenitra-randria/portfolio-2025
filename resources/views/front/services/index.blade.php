@@ -28,7 +28,7 @@
     <!-- End Breadcrumb -->
 
     <!-- Start Why Choose Us
-                                                                                                                        ============================================= -->
+                                                                                                                                                                                                    ============================================= -->
     <div class="choose-us-style-one-area default-padding bg-gray">
         <div class="container">
             <div class="row align-center">
@@ -64,13 +64,7 @@
     </div>
     <!-- End Why Choose Us -->
 
-    <!-- Start Services
-                                                                                                                        ============================================= -->
-    <div class="creative-services-area overflow-hidden default-padding">
-
-        <div class="bg-static">
-            <img class="bg-move" src="assets/img/shape/5.png" alt="Image Not Found">
-        </div>
+    <div class="services-style-three-area bg-dark-secondary text-light overflow-hidden default-padding">
 
         <div class="container">
             <div class="row">
@@ -83,92 +77,52 @@
             </div>
         </div>
 
-        <div class="container container-stage">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <div class="service-hover-items">
 
-                    <div class="services-item-one-items">
-                        <!-- Navigation -->
-                        <div class="services-nav">
-                            <div class="nav-items">
-                                <div class="services-button-prev"></div>
-                                <div class="services-button-next"></div>
-                            </div>
-                        </div>
-                        <div class="services-carousel swiper">
-                            <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper">
+                        <ul>
+                            @foreach ($services as $key => $service)
+                                <li>
+                                    <a href="{{ url('/services', $service->slug) }}" class="service-hover-item">
+                                        <div class="service-hover-content">
+                                            <div class="icon">
+                                                <i class="fas fa-vector-square"></i>
+                                            </div>
+                                            <div class="item-title">
+                                                <h2>{{ $service->title }}</h2>
+                                                <span>0{{ $key + 1 }}</span>
+                                            </div>
+                                            <div class="details">
+                                                <p>
+                                                    {{ $service->excerpt }}
+                                                </p>
+                                            </div>
+                                            <div class="arrow">
+                                                <strong class="btn-animation"><i class="fas fa-arrow-right"></i> <span>Voir
+                                                        plus</span></strong>
+                                            </div>
+                                        </div>
+                                        <div class="service-hover-wrapper">
+                                            <img class="service-hover-placeholder" src="storage/{{ $service->image }}"
+                                                alt="Image Not Found">
+                                        </div>
+                                    </a>
 
-                                <!-- Single Item -->
-                                <div class="swiper-slide">
-                                    <div class="cteative-service-item">
-                                        <img src="assets/img/icon/4.png" alt="Icon">
-                                        <h4><a href="{{ url('services/xyz') }}">Développement web</a></h4>
-                                        <p>
-                                            Wave Tech Team propose des solutions de développement web sur mesure,
-                                            utilisant des technologies modernes pour créer des sites et applications
-                                            performants, sécurisés et adaptés aux besoins spécifiques de chaque client.
-                                        </p>
-                                        <span>01</span>
-                                    </div>
-                                </div>
-                                <!-- End Single Item -->
-                                <!-- Single Item -->
-                                <div class="swiper-slide">
-                                    <div class="cteative-service-item">
-                                        <img src="assets/img/icon/2.png" alt="Icon">
-                                        <h4><a href="{{ url('services/xyz') }}">Développement mobile</a></h4>
-                                        <p>
-                                            Wave Tech Team offre des services de développement mobile pour créer des
-                                            applications intuitives, performantes et adaptées aux plateformes iOS et
-                                            Android, en garantissant une expérience utilisateur fluide et optimisée.
-                                        </p>
-                                        <span>02</span>
-                                    </div>
-                                </div>
-                                <!-- End Single Item -->
-                                <!-- Single Item -->
-                                <div class="swiper-slide">
-                                    <div class="cteative-service-item">
-                                        <img src="assets/img/icon/3.png" alt="Icon">
-                                        <h4><a href="{{ url('services/xyz') }}">Redaction</a></h4>
-                                        <p>
-                                            Wave Tech Team propose des services de rédaction de contenu sur mesure,
-                                            créant des textes clairs, engageants et optimisés pour le SEO, afin de
-                                            répondre aux besoins spécifiques de chaque projet et d'attirer efficacement
-                                            le public cible.
-                                        </p>
-                                        <span>03</span>
-                                    </div>
-                                </div>
-                                <!-- End Single Item -->
-                                <!-- Single Item -->
-                                <div class="swiper-slide">
-                                    <div class="cteative-service-item">
-                                        <img src="assets/img/icon/1.png" alt="Icon">
-                                        <h4><a href="{{ url('services/xyz') }}">Referencement</a></h4>
-                                        <p>
-                                            Wave Tech Team offre des services de référencement (SEO) pour améliorer la
-                                            visibilité de votre site web sur les moteurs de recherche, en optimisant les
-                                            contenus, la structure et les performances pour attirer plus de trafic
-                                            organique et atteindre vos objectifs commerciaux.
-                                        </p>
-                                        <span>04</span>
-                                    </div>
-                                </div>
-                                <!-- End Single Item -->
-                            </div>
-
-                        </div>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+
+
     </div>
-    <!-- End Services -->
 
     <!-- Start Brand Area
-                                                                                                                        ============================================= -->
+                                                                                                                                                                                                    ============================================= -->
     <div class="brand-area relative overflow-hidden bg-gradient text-light">
         <div class="brand-style-one">
             <div class="container-fill">
@@ -212,7 +166,7 @@
     <!-- End Bradn Area -->
 
     <!-- Start Award
-                                                                                                                        ============================================= -->
+                                                                                                                                                                                                    ============================================= -->
     <div class="award-area default-padding overflow-hidden bg-dark">
         <div class="container overflow-hidden">
             <div class="row align-center">
@@ -428,7 +382,7 @@
     <!-- End Single Section -->
 
     <!-- Start Testimonial Area
-                                                                                                                        ============================================= -->
+                                                                                                                                                                                                    ============================================= -->
     {{-- <div class="testimonial-style-one-area default-padding-top">
 
         <div class="container">

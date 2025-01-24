@@ -6,7 +6,7 @@
 
 
     <!-- Start Breadcrumb
-                ============================================= -->
+                        ============================================= -->
     <div class="breadcrumb-area bg-gray">
         <div class="container">
             <div class="breadcrumb-item">
@@ -30,7 +30,7 @@
     <!-- End Breadcrumb -->
 
     <!-- Start Contact Us
-                ============================================= -->
+                        ============================================= -->
     <div class="contact-area contact-page overflow-hidden default-padding">
         <div class="container">
             <div class="row">
@@ -61,16 +61,17 @@
                                 <div class="info">
                                     <ul class="social-link">
                                         <li>
-                                            <a class="facebook" href="#" target="_blank"><i
-                                                    class="fab fa-facebook-f"></i></a>
+                                            <a class="facebook"
+                                                href="https://www.facebook.com/people/Wave-Tech-Team/61554723864028/"
+                                                target="_blank"><i class="fab fa-facebook-f"></i></a>
                                         </li>
-                                        <li>
+                                        {{-- <li>
                                             <a class="twitter" href="#" target="_blank"><i
                                                     class="fab fa-twitter"></i></a>
-                                        </li>
+                                        </li> --}}
                                         <li>
-                                            <a class="linkedin" href="#" target="_blank"><i
-                                                    class="fab fa-linkedin-in"></i></a>
+                                            <a class="linkedin" href="https://www.linkedin.com/company/wave-tech-team"
+                                                target="_blank"><i class="fab fa-linkedin-in"></i></a>
                                         </li>
                                     </ul>
                                 </div>

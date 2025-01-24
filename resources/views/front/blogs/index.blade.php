@@ -6,7 +6,7 @@
 
 
     <!-- Start Breadcrumb
-                                                ============================================= -->
+                                                                                                                                                                                                                ============================================= -->
     <div class="breadcrumb-area bg-gray">
         <div class="container">
             <div class="breadcrumb-item">
@@ -22,6 +22,11 @@
                             </ol>
                         </nav>
                         <h1>Actualités & événements</h1>
+                        @if (request()->has('tag'))
+                            <a href="{{ url('/blogs') }}" class="btn" style="margin-top: 25px;
+">Réinitialiser les
+                                filtres</a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -30,182 +35,50 @@
     <!-- End Breadcrumb -->
 
     <!-- Start Blog
-                                                ============================================= -->
+                                                                                                                                                                                                                ============================================= -->
     <div class="blog-area blog-grid-colum default-padding">
         <div class="container">
             <div class="row">
-                <!-- Single Item -->
-                <div class="col-lg-4 col-md-6 mb-50">
-                    <div class="blog-style-one">
-                        <div class="thumb">
-                            <a href="{{ url('/blogs/xyz') }}"><img src="assets/img/800x600.png" alt="Image Not Found"></a>
-                        </div>
-                        <div class="info">
-                            <div class="meta">
-                                <ul>
-                                    <li>
-                                        <a href="#">Md Sohag</a>
-                                    </li>
-                                    <li>
-                                        25 April, 2023
-                                    </li>
-                                </ul>
+                @foreach ($posts as $post)
+                    <!-- Single Item -->
+                    <div class="col-lg-4 col-md-6 mb-50">
+                        <div class="blog-style-one">
+                            <div class="thumb">
+                                <a href="{{ url('/blogs', $post->slug) }}"><img src="storage/{{ $post->image }}"
+                                        alt="Image post"></a>
                             </div>
-                            <h3 class="post-title"><a href="{{ url('/blogs/xyz') }}">Miscovery incommode earnestly is
-                                    commanded</a></h3>
-                            <a href="{{ url('/blogs/xyz') }}" class="button-regular text-light">
-                                Continue Reading <i class="fas fa-arrow-right"></i>
-                            </a>
+                            <div class="info">
+                                <div class="meta">
+                                    <ul>
+                                        <li>
+                                            <a href="#">Admin</a>
+                                        </li>
+                                        <li>
+                                            {{ $post->created_at->locale('fr')->format('d M Y') }}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h3 class="post-title"><a href="{{ url('/blogs', $post->slug) }}">{{ $post->title }}</a>
+                                </h3>
+                                <a href="{{ url('/blogs', $post->slug) }}" class="button-regular text-light">
+                                    Continuer la lecture <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="col-lg-4 col-md-6 mb-50">
-                    <div class="blog-style-one">
-                        <div class="thumb">
-                            <a href="{{ url('/blogs/xyz') }}"><img src="assets/img/800x600.png" alt="Image Not Found"></a>
-                        </div>
-                        <div class="info">
-                            <div class="meta">
-                                <ul>
-                                    <li>
-                                        <a href="#">Md Sohag</a>
-                                    </li>
-                                    <li>
-                                        25 April, 2023
-                                    </li>
-                                </ul>
-                            </div>
-                            <h3 class="post-title"><a href="{{ url('/blogs/xyz') }}">Expression acceptance imprudence
-                                    in mentions.</a></h3>
-                            <a href="{{ url('/blogs/xyz') }}" class="button-regular text-light">
-                                Continue Reading <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="col-lg-4 col-md-6 mb-50">
-                    <div class="blog-style-one">
-                        <div class="thumb">
-                            <a href="{{ url('/blogs/xyz') }}"><img src="assets/img/800x600.png" alt="Image Not Found"></a>
-                        </div>
-                        <div class="info">
-                            <div class="meta">
-                                <ul>
-                                    <li>
-                                        <a href="#">Md Sohag</a>
-                                    </li>
-                                    <li>
-                                        25 April, 2023
-                                    </li>
-                                </ul>
-                            </div>
-                            <h3 class="post-title"><a href="{{ url('/blogs/xyz') }}">Considered imprudence of
-                                    technical friendship.</a></h3>
-                            <a href="{{ url('/blogs/xyz') }}" class="button-regular text-light">
-                                Continue Reading <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="col-lg-4 col-md-6 mb-50">
-                    <div class="blog-style-one">
-                        <div class="thumb">
-                            <a href="{{ url('/blogs/xyz') }}"><img src="assets/img/800x600.png" alt="Image Not Found"></a>
-                        </div>
-                        <div class="info">
-                            <div class="meta">
-                                <ul>
-                                    <li>
-                                        <a href="#">Md Sohag</a>
-                                    </li>
-                                    <li>
-                                        25 April, 2023
-                                    </li>
-                                </ul>
-                            </div>
-                            <h3 class="post-title"><a href="{{ url('/blogs/xyz') }}">Miscovery incommode earnestly is
-                                    commanded</a></h3>
-                            <a href="{{ url('/blogs/xyz') }}" class="button-regular text-light">
-                                Continue Reading <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="col-lg-4 col-md-6 mb-50">
-                    <div class="blog-style-one">
-                        <div class="thumb">
-                            <a href="{{ url('/blogs/xyz') }}"><img src="assets/img/800x600.png" alt="Image Not Found"></a>
-                        </div>
-                        <div class="info">
-                            <div class="meta">
-                                <ul>
-                                    <li>
-                                        <a href="#">Md Sohag</a>
-                                    </li>
-                                    <li>
-                                        25 April, 2023
-                                    </li>
-                                </ul>
-                            </div>
-                            <h3 class="post-title"><a href="{{ url('/blogs/xyz') }}">Expression acceptance imprudence
-                                    in mentions.</a></h3>
-                            <a href="{{ url('/blogs/xyz') }}" class="button-regular text-light">
-                                Continue Reading <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
-                <!-- Single Item -->
-                <div class="col-lg-4 col-md-6 mb-50">
-                    <div class="blog-style-one">
-                        <div class="thumb">
-                            <a href="{{ url('/blogs/xyz') }}"><img src="assets/img/800x600.png" alt="Image Not Found"></a>
-                        </div>
-                        <div class="info">
-                            <div class="meta">
-                                <ul>
-                                    <li>
-                                        <a href="#">Md Sohag</a>
-                                    </li>
-                                    <li>
-                                        25 April, 2023
-                                    </li>
-                                </ul>
-                            </div>
-                            <h3 class="post-title"><a href="{{ url('/blogs/xyz') }}">Considered imprudence of
-                                    technical friendship.</a></h3>
-                            <a href="{{ url('/blogs/xyz') }}" class="button-regular text-light">
-                                Continue Reading <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Item -->
+                    <!-- End Single Item -->
+                @endforeach
+                @if ($posts->isEmpty())
+                    <p style="text-align: center;" class="text-light">Aucun post trouvé.</p>
+                @endif
             </div>
             <!-- Pagination -->
             <div class="row">
                 <div class="col-md-12 pagi-area text-center">
-                    <nav aria-label="navigation">
+                    <nav aria-label="pagination">
                         <ul class="pagination">
-                            <li class="page-item"><a class="page-link bg-dark-secondary text-light"
-                                    href="blog-with-sidebar.html"><i class="fas fa-angle-left"></i></a></li>
-                            <li class="page-item active"><a class="page-link bg-dark-secondary text-light"
-                                    href="blog-with-sidebar.html">1</a></li>
-                            <li class="page-item"><a class="page-link bg-dark-secondary text-light"
-                                    href="blog-with-sidebar.html">2</a></li>
-                            <li class="page-item"><a class="page-link bg-dark-secondary text-light"
-                                    href="blog-with-sidebar.html">3</a></li>
-                            <li class="page-item"><a class="page-link bg-dark-secondary text-light"
-                                    href="blog-with-sidebar.html"><i class="fas fa-angle-right"></i></a></li>
+                            <!-- Pagination Links -->
+                            {{ $posts->links() }}
                         </ul>
                     </nav>
                 </div>
