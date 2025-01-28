@@ -11,7 +11,7 @@ ENV REAL_IP_HEADER 1
 
 # Laravel config
 ENV APP_ENV production
-ENV APP_DEBUG false
+ENV APP_DEBUG true
 ENV LOG_CHANNEL stderr
 ENV DATABASE_URL postgresql://root:f9Nvo7ZYatjSle1fscQYuHatIEHztFdu@dpg-cucc233qf0us73c93gng-a/dbwavetech
 ENV DB_CONNECTION pgsql
