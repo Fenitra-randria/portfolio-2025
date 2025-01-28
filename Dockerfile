@@ -42,13 +42,14 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 RUN echo "DirectoryIndex index.php" >> /etc/apache2/apache2.conf
 
 # Étape 9 : Configurer Apache pour pointer vers le répertoire public de Laravel
-RUN echo "<VirtualHost *:80>" >> /etc/apache2/sites-available/000-default.conf \
+RUN echo "<VirtualHost *:80>" > /etc/apache2/sites-available/000-default.conf \
     && echo "    DocumentRoot /var/www/html/public" >> /etc/apache2/sites-available/000-default.conf \
     && echo "    <Directory /var/www/html/public>" >> /etc/apache2/sites-available/000-default.conf \
     && echo "        AllowOverride All" >> /etc/apache2/sites-available/000-default.conf \
     && echo "        Require all granted" >> /etc/apache2/sites-available/000-default.conf \
     && echo "    </Directory>" >> /etc/apache2/sites-available/000-default.conf \
     && echo "</VirtualHost>" >> /etc/apache2/sites-available/000-default.conf
+
 
 # Étape 10 : Configurer les variables d'environnement pour Laravel
 COPY .env.prod .env
