@@ -14,14 +14,15 @@ services:
         ports:
             - 8000:80
         environment:
-            - APP_ENV=local
+            - APP_ENV=production
             - APP_DEBUG=true
-            - APP_KEY=base64:key_placeholder
-            - DB_HOST=db
-            - DB_PORT=3306
-            - DB_DATABASE=wavetechteam
-            - DB_USERNAME=root
-            - DB_PASSWORD=root
+            - APP_KEY=base64:N07x9RUNJOLVIXc0v9IM3vXUmC4d5vLQEsLcr2r8wtA=
+            # Configuration base de données avec des variables dynamiques
+            - DB_HOST=db # Nom du service de la base de données
+            - DB_PORT=3306 # Port de la base de données
+            - DB_DATABASE=wavetechteam # Nom de la base de données
+            - DB_USERNAME=root # Nom d'utilisateur de la base
+            - DB_PASSWORD=fKoiuYEGHkBAUUhEBqndqobMBHqXINWV # Mot de passe de la base
         depends_on:
             - db
 
@@ -30,10 +31,10 @@ services:
         container_name: wavetechteam-db
         restart: unless-stopped
         environment:
-            MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: wavetechteam
+            MYSQL_ROOT_PASSWORD: fKoiuYEGHkBAUUhEBqndqobMBHqXINWV
+            MYSQL_DATABASE: wavetechteam # Base de données à créer
             MYSQL_USER: root
-            MYSQL_PASSWORD: root
+            MYSQL_PASSWORD: fKoiuYEGHkBAUUhEBqndqobMBHqXINWV
         ports:
             - 3306:3306
         volumes:
@@ -52,4 +53,4 @@ services:
             - app
 
 volumes:
-    db-data:
+    db-data: {}

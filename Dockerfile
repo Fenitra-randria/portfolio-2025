@@ -18,29 +18,32 @@ RUN apt-get update && apt-get install -y \
 COPY --from=composer:2.6 /usr/bin/composer /usr/bin/composer
 
 # Étape 4 : Configurer le répertoire de travail
-WORKDIR /var/www/html
+WORKDIR /var/www
 
 # Étape 5 : Copier le code source de votre application
-COPY . /var/www/html
+COPY . /var/www
 
 # Étape 6 : Installer les dépendances de Laravel
 RUN composer install --no-dev --optimize-autoloader
 
 # Étape 7 : Configurer les permissions
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chown -R www-data:www-data /var/www \
+    && chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
 # Étape 8 : Configurer Apache
 RUN a2enmod rewrite
 
-# Étape 9 : Configurer le fichier .env
-COPY .env.example .env
+# Étape 9 : Configurer les variables d'environnement
+# Copie le fichier .env de l'exemple, ou assure-toi qu'il existe déjà
+COPY .env.prod .env
 RUN php artisan key:generate
 
-# Étape 10 : Configurer les variables d'environnement
-ENV APP_ENV=production
-ENV APP_DEBUG=false
-ENV APP_KEY=base64:N07x9RUNJOLVIXc0v9IM3vXUmC4d5vLQEsLcr2r8wtA=
+# Étape 10 : Configurer le fichier .env avec les variables d'environnement de Docker
+ENV DB_HOST=db
+ENV DB_PORT=3306
+ENV DB_DATABASE=wavetechteam
+ENV DB_USERNAME=root
+ENV DB_PASSWORD=fKoiuYEGHkBAUUhEBqndqobMBHqXINWV
 
 # Étape 11 : Exposer le port 80
 EXPOSE 80
