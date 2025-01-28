@@ -33,6 +33,9 @@ RUN chown -R www-data:www-data /var/www \
 # Étape 8 : Configurer Apache
 RUN a2enmod rewrite
 
+# Étape 8.1 : Configurer Apache pour supprimer l'avertissement 'ServerName'
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
 # Étape 9 : Configurer les variables d'environnement
 # Copie le fichier .env de l'exemple, ou assure-toi qu'il existe déjà
 COPY .env.prod .env
