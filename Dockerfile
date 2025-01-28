@@ -13,8 +13,8 @@ ENV REAL_IP_HEADER 1
 ENV APP_ENV production
 ENV APP_DEBUG true
 ENV LOG_CHANNEL stderr
-ENV DATABASE_URL postgresql://root:f9Nvo7ZYatjSle1fscQYuHatIEHztFdu@dpg-cucc233qf0us73c93gng-a/dbwavetech
-ENV DB_CONNECTION pgsql
+ENV DATABASE_URL mysql://root:fKoiuYEGHkBAUUhEBqndqobMBHqXINWV@mysql.railway.internal:3306/railway
+ENV DB_CONNECTION mysql
 ENV APP_KEY base64:M+VL2s70HDv6xgTn1YbQ3CWYzty93uyO9Lfs01X4AxA=
 
 # Allow composer to run as root
