@@ -1,0 +1,12 @@
+# Exported from Render on 2025-01-28T11:00:37Z
+services:
+  - type: web
+    name: wavetechteam
+    runtime: docker
+    repo: https://gitlab.com/fenitramidev7/wavetechteam
+    plan: free
+    region: oregon
+    dockerContext: .
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+version: "1"
