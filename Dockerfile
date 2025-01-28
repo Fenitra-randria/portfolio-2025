@@ -13,7 +13,7 @@ ENV REAL_IP_HEADER 1
 ENV APP_ENV production
 ENV APP_DEBUG true
 ENV LOG_CHANNEL stderr
-ENV DATABASE_URL mysql://root:fKoiuYEGHkBAUUhEBqndqobMBHqXINWV@mysql.railway.internal:3306/railway
+ENV DATABASE_URL mysql://root:fKoiuYEGHkBAUUhEBqndqobMBHqXINWV@monorail.proxy.rlwy.net:52281/railway
 ENV DB_CONNECTION mysql
 ENV APP_KEY base64:M+VL2s70HDv6xgTn1YbQ3CWYzty93uyO9Lfs01X4AxA=
 
