@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Avrix - Digital Agency Portfolio Template">
+    <meta name="description" content="Wave Tech Team - Crafting Innovative Digital">
 
     <!-- ========== Page Title ========== -->
     <title>@yield('title', 'Wave Tech Team - Crafting Innovative Digital')</title>

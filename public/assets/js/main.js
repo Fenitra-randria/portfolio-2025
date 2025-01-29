@@ -1,9 +1,9 @@
 /* ===================================================================
-    
-    Author          : Valid Theme
-    Template Name   : Avrix - Digital Agency Portfolio Template
+
+    Author          : Aro Fenitra Randriamihajanirina
+    Template Name   : Wave Tech Team - Crafting Innovative Digital
     Version         : 1.0
-    
+
 * ================================================================= */
 (function($) {
 	"use strict";
@@ -281,7 +281,7 @@
 			},
 		});
 
-		
+
 		/* ==================================================
             # Banner Carousel
          ===============================================*/
